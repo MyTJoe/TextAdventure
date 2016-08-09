@@ -1,5 +1,6 @@
 package com.theironyard.charlotte;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Game {
@@ -7,23 +8,34 @@ public class Game {
     public static Player player = new Player();
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Welcome, traveller.");
+//        System.out.println("Welcome, traveller.");
+//
+//        player.chooseName();
+//        player.chooseWeapon();
+//        player.chooseLocation();
+//
+//        player.findItem("shield");
+//        player.findItem("boots");
+//        player.findItem("belt");
+//
+//        Character c = Character.buildCharacter("goodguy");
+//
+//        if (c instanceof Enemy) {
+//            Enemy aljfafjf = (Enemy)c;
+//        }
+//
+//        nextLine();
 
-        player.chooseName();
-        player.chooseWeapon();
-        player.chooseLocation();
+        ArrayList<Character> characters = new ArrayList<>();
 
-        player.findItem("shield");
-        player.findItem("boots");
-        player.findItem("belt");
-
-        Character c = Character.buildCharacter("goodguy");
-
-        if (c instanceof Enemy) {
-            Enemy aljfafjf = (Enemy)c;
+        for (int i = 0;i < 50;i++) {
+            characters.add(Character.buildCharacter("badguy"));
         }
 
-        nextLine();
+        // POLYMORPHISM
+        for (int i = 0;i < 50;i++) {
+            characters.get(i).makeNoise();
+        }
     }
 
     public static String nextLine() {

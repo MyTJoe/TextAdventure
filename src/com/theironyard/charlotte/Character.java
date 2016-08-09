@@ -38,12 +38,14 @@ public class Character {
         }
     }
 
-    public static Character buildCharacter(String characterType) {
-        if (characterType.equals("badguy")) {
-            return new Enemy("RAWR", 1000, 1000);
+    public static Character buildCharacter(String category) throws Exception {
+        if (category.equals("badguy")) {
+            return new Enemy("Victor Freeze", 10, 10);
+        } else if (category.equals("goodguy")) {
+            return new Player("Ben", 10000, 10010000);
+        } else {
+            throw new Exception("This is not a valid character type.");
         }
-
-        return new Player("Ben", 100000, 100000);
     }
 
     public void makeNoise() {
